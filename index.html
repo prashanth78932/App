@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./homepage.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+    <title>Home Page</title>
+</head>
+<body>
+    <div id="container">
+        <nav id="navbar">
+            <ul>
+                <li class="list"><a href="#home"> Home</a></li>
+                <li class="list"><a href="#Action">Action</a></li>
+                <li class="list"><a href="#Periodic">Periodic</a></li>
+                <li class="list"><a href="#Thriller">Thriller</a></li>
+            </ul>
+        </nav>
+
+        <section id="home">
+            <img src="./Assets/images/1.jpg" alt="" class="sliderimg">
+            
+            <button id="b1" class="btn" onclick="prev()"> < </button>
+            <button id="b2" class="btn" onclick="next()"> > </button>
+        </section>
+        
+        <section id="Action" class="genre">
+            <h2>Action</h2><br>
+            <img class="a-img" id="a1" src="./Assets/images/saaho.jpg" alt="">
+            <img class="a-img" id="a2" src="./Assets/images/pushpa.jpg" alt="">
+            <img class="a-img" id="a3" src="./Assets/images/wild dog.jpg" alt="">
+            <img class="a-img" id="a4" src="./Assets/images/mirchi.jpg" alt="">
+            <img class="a-img" id="a5" src="./Assets/images/jg.jpg" alt="">
+            <img class="a-img" id="a6" src="./Assets/images/ghost.jpg" alt="">
+        </section>
+
+        <section id="Periodic" class="genre">
+            <h2>Periodic</h2> <br>
+            <img class="p-img" id="p1" src="./Assets/images/bb1.jpg" alt="">
+            <img class="p-img" id="p2" src="./Assets/images/bb2.jpg" alt="">
+            <img class="p-img" id="p3" src="./Assets/images/sye ra.jpg" alt="">
+            <img class="p-img" id="p4" src="./Assets/images/rangasthalam.webp" alt="">
+            <img class="p-img" id="p5" src="./Assets/images/rudramadevi.jpg" alt="">
+            <img class="p-img" id="p6" src="./Assets/images/palasa.jpg" alt="">
+        </section>
+
+        <section id="Thriller" class="genre">
+            <h2>Thriller</h2> <br>
+            <img class="t-img" id="t1" src="./Assets/images/1nenokkadine.jpg" alt="">
+            <img class="t-img" id="t2" src="./Assets/images/goodachari.jpg" alt="">
+            <img class="t-img" id="t3" src="./Assets/images/Drushyam-2.jpg" alt="">
+            <img class="t-img" id="t4" src="./Assets/images/khiladi.jpg" alt="">
+            <img class="t-img" id="t5" src="./Assets/images/rakshasudu.jpg" alt="">
+            <img class="t-img" id="t6" src="./Assets/images/v.jpg" alt="">
+        </section>
+        <footer >
+            <div class="center" id="footer">
+                Copyright &copy; www.movieplex.com. All rights reserved!
+            </div>
+        </footer>
+    </div>
+
+
+    <script>
+        var slider_img=document.querySelector('.sliderimg');
+        var images=['1.jpg','2.jpg','3.jpg','4.jpg']
+
+        var i=0;
+        function prev()
+        {
+            if(i<=0)
+            i=images.length;
+            i--
+            return setImg();
+        }
+        function next()
+        {
+            if(i>=images.length-1)
+            i=-1;
+            i++
+            return setImg();
+        }
+
+        function setImg()
+        {
+            return slider_img.setAttribute('src','./Assets/images/'+images[i])
+        }
+    </script>
+</body>
+</html>
